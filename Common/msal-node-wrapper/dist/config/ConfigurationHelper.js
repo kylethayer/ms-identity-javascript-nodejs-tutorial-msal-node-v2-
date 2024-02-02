@@ -4,7 +4,6 @@
 
 var Constants = require('../utils/Constants.js');
 var ConfigurationTypes = require('./ConfigurationTypes.js');
-var StringUtils = require('../node_modules/@azure/msal-common/dist/utils/StringUtils.js');
 var UrlString = require('../node_modules/@azure/msal-common/dist/url/UrlString.js');
 
 /*
@@ -30,6 +29,12 @@ class ConfigurationHelper {
             },
         };
     }
+    static isEmpty(str) {
+        if (typeof str === "string" && str.trim().length === 0) {
+            return true;
+        }
+        return false;
+    }
     /**
      * Validates the fields in the config object
      * @param {AuthConfig} authConfig: configuration object
@@ -38,7 +43,7 @@ class ConfigurationHelper {
     static validateAuthConfig(authConfig, appType) {
         switch (appType) {
             case ConfigurationTypes.AppType.WebApp:
-                if (StringUtils.StringUtils.isEmptyObj(authConfig.auth.redirectUri)) {
+                if (this.isEmpty(authConfig.auth.redirectUri)) {
                     throw new Error(Constants.ConfigurationErrorMessages.NO_REDIRECT_URI);
                 }
                 break;

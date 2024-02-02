@@ -8,6 +8,7 @@ export declare class ConfigurationHelper {
      * @returns {Configuration}
      */
     static getMsalConfiguration(authConfig: AuthConfig): Configuration;
+    static isEmpty(str?: string): boolean;
     /**
      * Validates the fields in the config object
      * @param {AuthConfig} authConfig: configuration object

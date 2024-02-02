@@ -2,7 +2,6 @@
 'use strict';
 import { DEFAULT_LOGGER_OPTIONS, ConfigurationErrorMessages, OIDC_SCOPES } from '../utils/Constants.esm.js';
 import { AppType } from './ConfigurationTypes.esm.js';
-import { StringUtils } from '../node_modules/@azure/msal-common/dist/utils/StringUtils.esm.js';
 import { UrlString } from '../node_modules/@azure/msal-common/dist/url/UrlString.esm.js';
 
 /*
@@ -28,6 +27,12 @@ class ConfigurationHelper {
             },
         };
     }
+    static isEmpty(str) {
+        if (typeof str === "string" && str.trim().length === 0) {
+            return true;
+        }
+        return false;
+    }
     /**
      * Validates the fields in the config object
      * @param {AuthConfig} authConfig: configuration object
@@ -36,7 +41,7 @@ class ConfigurationHelper {
     static validateAuthConfig(authConfig, appType) {
         switch (appType) {
             case AppType.WebApp:
-                if (StringUtils.isEmptyObj(authConfig.auth.redirectUri)) {
+                if (this.isEmpty(authConfig.auth.redirectUri)) {
                     throw new Error(ConfigurationErrorMessages.NO_REDIRECT_URI);
                 }
                 break;
