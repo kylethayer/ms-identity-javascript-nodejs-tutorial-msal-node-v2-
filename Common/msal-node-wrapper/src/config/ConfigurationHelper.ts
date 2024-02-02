@@ -36,7 +36,7 @@ export class ConfigurationHelper {
     static validateAuthConfig(authConfig: AuthConfig, appType: AppType): void {
         switch (appType) {
             case AppType.WebApp:
-                if (StringUtils.isEmpty((<WebAppAuthConfig>authConfig).auth.redirectUri)) {
+                if (StringUtils.isEmptyObj((<WebAppAuthConfig>authConfig).auth.redirectUri)) {
                     throw new Error(ConfigurationErrorMessages.NO_REDIRECT_URI);
                 }
                 break;
