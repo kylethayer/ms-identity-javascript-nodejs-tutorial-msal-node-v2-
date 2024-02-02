@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Azure-Samples/ms-identity-javascript-nodejs-tutorial.git"
+    "url": "https://github.com/kylethayer/ms-identity-javascript-nodejs-tutorial-msal-node-v2-.git"
   },
   "scripts": {
     "build": "rollup -c --strictDeprecations --bundleConfigAsCjs",
@@ -50,8 +50,8 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@azure/msal-node": "^1.17.3",
-    "axios": "^0.27.2",
+    "@azure/msal-node": "^2.6.2",
+    "axios": "^1.6.7",
     "express": "^4.18.2",
     "express-session": "^1.17.3"
   }
