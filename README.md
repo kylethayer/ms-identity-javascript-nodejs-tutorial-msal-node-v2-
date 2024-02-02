@@ -1,3 +1,11 @@
+# NOTE: I made a fork of this express msal-node wrapper, since the version this is forked from doesn't work with the newest msal-node libraries. So I fixed it in this version.
+You can install it with: 
+
+```npm install https://gitpkg.now.sh/kylethayer/ms-identity-javascript-nodejs-tutorial-msal-node-v2-/Common/msal-node-wrapper?main```
+
+Hopefully the demos in this project work, and you can also see a simple demo here: https://github.com/info441-wi24/lecture_demos/tree/main/lecture_08_sessions_auth/demo-3-updated-auth
+
+
 ---
 page_type: sample
 languages:
