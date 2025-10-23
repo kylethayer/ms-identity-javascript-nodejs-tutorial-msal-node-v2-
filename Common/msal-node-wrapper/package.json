@@ -7,7 +7,7 @@
     "dist"
   ],
   "engines": {
-    "node": "16 || 18 || 20"
+    "node": "16 || 18 || 20 || 22"
   },
   "repository": {
     "type": "git",
